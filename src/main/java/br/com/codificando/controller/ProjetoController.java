@@ -32,7 +32,8 @@ public class ProjetoController {
 	public String addProjeto(Model model) {
 		
 		model.addAttribute("projeto", new Projeto());
-		model.addAttribute("funcionarios", funcionarioRepository.findAllByCargo("Gerente"));
+		model.addAttribute("gerentes", funcionarioRepository.findAllByCargo("Gerente"));
+		model.addAttribute("funcionarios", funcionarioRepository.findByCargoNot("Gerente"));
         
         return "projeto/add";
 		
@@ -66,7 +67,8 @@ public class ProjetoController {
 	public String editProjeto(@PathVariable long id, Model model) {
         
         model.addAttribute("projeto", projetoRepository.findById(id));
-		model.addAttribute("funcionarios", funcionarioRepository.findAllByCargo("Gerente"));
+		model.addAttribute("gerentes", funcionarioRepository.findAllByCargo("Gerente"));
+		model.addAttribute("funcionarios", funcionarioRepository.findByCargoNot("Gerente"));
         
         return "projeto/edit";
 	}

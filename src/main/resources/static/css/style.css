@@ -155,3 +155,9 @@ select{
     background-color: #cc1e1e;
     color: white;
 }
+.list-group{
+    text-align: center;
+}
+.cl-dark{
+    color: white;
+}
