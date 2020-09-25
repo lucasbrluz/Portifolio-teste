@@ -72,19 +72,11 @@ public class ProjetoController {
 	}
 	
 	@GetMapping("/projeto/delete/{id}")
-	public String deleteProjeto(@PathVariable long id, Model model) {
-		
-		model.addAttribute("projeto", projetoRepository.findById(id));
-        
-        return "projeto/delete";
-		
-	}
+	public String deleteProjeto(@PathVariable long id) {
 	
-	@PostMapping("/projeto/delete")
-	public String deleteProjeto(Projeto projeto) {
 		try {
 
-            projetoRepository.delete(projeto);
+            projetoRepository.deleteById(id);
             
 		} catch (Exception e) {
 

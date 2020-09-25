@@ -150,3 +150,8 @@ select{
 .container-base{
     min-height: 700px;
 }
+
+.modal-header{
+    background-color: #cc1e1e;
+    color: white;
+}
