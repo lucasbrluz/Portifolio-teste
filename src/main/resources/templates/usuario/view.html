@@ -31,28 +31,38 @@
     <div class="container-base">
         <div class="container container-funcionario">
             <div class="form-titulo">
-                <h4>Funcionário</h4>
+                <h4>Usuário</h4>
             </div>
 
             <div th:if="${salvo}" class="alert alert-success">
-                Funcionário salvo com sucesso!
+                Usuário salvo com sucesso!
             </div>
 
             <form th:object="${funcionario}">
                 <div class="form-group">
                     <label>Código</label>
                     <input class="form-control" type="number" 
-                        th:field="${funcionario.id}" readonly>
+                        th:field="${usuario.id}" readonly>
                 </div>
 
                 <div class="form-group">
                     <label>Nome</label>
-                    <input class="form-control" type="text" th:field="${funcionario.nome}" readonly>
+                    <input class="form-control" type="text" th:field="${usuario.nome}" readonly>
                 </div>
 
                 <div class="form-group">
-                    <label>Cargo</label>
-                    <input class="form-control" type="text" th:field="${funcionario.cargo}" readonly>
+                    <label>login</label>
+                    <input class="form-control" type="text" th:field="${usuario.login}" readonly>
+                </div>
+
+                <!-- <div class="form-group">
+                    <label>senha</label>
+                    <input class="form-control" type="password" th:field="${usuario.senha}" readonly>
+                </div> -->
+
+                <div class="form-group">
+                    <label>cpf</label>
+                    <input class="form-control" type="text" th:field="${usuario.cpf}" readonly>
                 </div>
 
                 <div class="form-group">
