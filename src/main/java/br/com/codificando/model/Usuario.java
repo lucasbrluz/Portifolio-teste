@@ -1,9 +1,14 @@
 package br.com.codificando.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.Size;
 
 import org.springframework.lang.NonNull;
@@ -30,6 +35,14 @@ public class Usuario {
     @NonNull
     @Size(max = 100)
     private String cpf;
+
+    @ManyToMany
+	@JoinTable(
+			name="usuario_permissao",
+			joinColumns=@JoinColumn(name="usuario_id"),
+			inverseJoinColumns=@JoinColumn(name="permissao_id")
+			)
+    private List<Permissao> permissoes;
 
     public Long getId() {
         return id;
@@ -74,6 +87,14 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario [cpf=" + cpf + ", id=" + id + ", login=" + login + ", nome=" + nome + "]";
+    }
+
+    public List<Permissao> getPermissoes() {
+        return permissoes;
+    }
+
+    public void setPermissoes(List<Permissao> permissoes) {
+        this.permissoes = permissoes;
     }
 
 }
