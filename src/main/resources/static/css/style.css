@@ -180,3 +180,18 @@ select{
 .cl-dark{
     color: white;
 }
+
+.container-login{
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #1b1b2b;
+    border-radius: 20px;
+}
+.label-lembrar{
+    font-size: small;
+}
+.btn-entrar{
+    width: 100%;
+}
