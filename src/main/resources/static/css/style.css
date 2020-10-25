@@ -195,3 +195,7 @@ select{
 .btn-entrar{
     width: 100%;
 }
+.div-login{
+    width: 100%;
+    text-align: right;
+}
